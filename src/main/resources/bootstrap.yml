@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: customer-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-service
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://35.185.47.241:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
