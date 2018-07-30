@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@FeignClient(name="order-service")
+@FeignClient(name="gateway-service")
 public interface OrderProxy {
 
-    @PostMapping("/order")
+    @PostMapping("/order-service/order")
     Mono<Order> create(@RequestBody Order order);
 
-    @GetMapping("/orders/{customerId}")
+    @GetMapping("/order-service/orders/{customerId}")
     Flux<Order> getOrders(@PathVariable String customerId);
 }

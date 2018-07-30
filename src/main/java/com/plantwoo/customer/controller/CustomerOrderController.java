@@ -1,5 +1,6 @@
 package com.plantwoo.customer.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.plantwoo.customer.model.Order;
 import com.plantwoo.customer.service.CustomerOrderService;
 import org.bson.types.ObjectId;
